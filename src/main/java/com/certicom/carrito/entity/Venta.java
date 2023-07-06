@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -15,8 +18,14 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_venta")
     private Long idVenta;
-    @Column(name = "id_cliente", nullable = false)
-    private String idCliente;
+
     @Column(name = "fecha", nullable = false)
     private Date fecha;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+
+    @ManyToMany(mappedBy = "ventas")
+    private Set<Producto> productos;
 }

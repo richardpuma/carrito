@@ -2,6 +2,7 @@ package com.certicom.carrito.controller;
 
 import com.certicom.carrito.entity.Cliente;
 import com.certicom.carrito.service.ClienteService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/vi/cliente")
+@RequestMapping(path = "api/v1/cliente")
+@Tag(name = "Cliente")
 public class ClienteController {
 
     @Autowired
@@ -17,6 +19,7 @@ public class ClienteController {
 
     @GetMapping
     public List<Cliente> getAllCliente(){
+
         return clienteService.getClientes();
     }
 
