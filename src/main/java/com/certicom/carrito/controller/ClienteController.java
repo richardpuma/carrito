@@ -20,9 +20,9 @@ public class ClienteController {
         return clienteService.getClientes();
     }
 
-    @GetMapping("/{id}")
-    public Optional<Cliente> getCliente(@PathVariable("id") Long id){
-        return clienteService.getCliente(id);
+    @GetMapping("/{idCliente}")
+    public Optional<Cliente> getCliente(@PathVariable("idCliente") Long idCliente){
+        return clienteService.getCliente(idCliente);
     }
 
     @PostMapping
@@ -30,8 +30,8 @@ public class ClienteController {
         clienteService.saveOrUpdateCliente(cliente);
     }
 
-    @DeleteMapping("/{id}")
-    public void saveOrUpdateCliente(@PathVariable("id") Long id){
-        clienteService.deleteCliente(id);
+    @DeleteMapping("/{idCliente}")
+    public void saveOrUpdateCliente(@PathVariable("idCliente") Long idCliente){
+        clienteService.deleteCliente(idCliente);
     }
 }

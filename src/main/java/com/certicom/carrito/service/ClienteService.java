@@ -17,15 +17,15 @@ public class ClienteService {
         return clienteRepository.findAll();
     }
 
-    public Optional<Cliente> getCliente(Long id){
-        return clienteRepository.findById(id);
+    public Optional<Cliente> getCliente(Long idCliente){
+        return clienteRepository.findById(idCliente);
     }
 
     public void saveOrUpdateCliente(Cliente cliente){
         clienteRepository.save(cliente);
     }
 
-    public void deleteCliente(Long id){
-        clienteRepository.deleteById(id);
+    public void deleteCliente(Long idCliente){
+        clienteRepository.deleteById(idCliente);
     }
 }
